@@ -22,63 +22,31 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 
 ### Instalación 🔧
 
-En el EQUIPO-A ejecutar los siguientes comandos
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
+- En el EQUIPO-A, realizar lo siguiente:
+	* Clonar el repositorio.
+	* Abrir una terminal y situarse en la raiz del proyecto clonado.
+	* Ejecutar los siguientes comandos en el orden que precede:
+		$docker build -t daniel10510/student-api:1 .
+		$docker build -t daniel10510/student-frontend:1 ./frontend/
+		$docker login -u {LOGIN_DOCKERHUB} -p {PASSWORD_DOCKERHUB}
+		$docker push daniel10510/student-api:1
+		$docker push daniel10510/student-frontend:1
+	
+	(Nota: Reemplazar los valores {LOGIN_DOCKERHUB} y {PASSWORD_DOCKERHUB} con los valores respectivos a la cuenta dockerhub)
+	
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+- En el EQUIPO-B, realizar lo siguiente:
+	* Ejecutar los siguientes comandos en el orden que precede:
+		$sudo docker stack deploy --compose-file docker-compose.yml student-app
+	* Para verificar el correcto despliegue de la aplicación, ejecute el siguiente comando:
+		$sudo docker service ls
+	(Nota: Espere aproximadamente 5 minutos a que se levanten los servicios)
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+* [Maven](https://maven.apache.org/) - Manejador de dependencias backend
+* [NPM](https://www.npmjs.com/) - Manejador de dependencias frontend
 
 ## Versionado 📌
 
